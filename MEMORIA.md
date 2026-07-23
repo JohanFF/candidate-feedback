@@ -7,8 +7,8 @@
 - Estructuración inicial bajo arquitectura MVC en PHP POO sin frameworks pesados para maximizar velocidad y rendimiento en despliegue.
 ## Tarea Sorpresa: Reconstrucción en Bolt.new y Comparación
 
-- **URL del proyecto en Bolt.new:** [PEGA_AQUÍ_TU_ENLACE_DE_BOLT]
+- **URL de la app en Bolt.new:** [https://remote-candidate-eva-ddsp.bolt.host]
 
 ### Comparación: Bolt.new vs. Código a Mano (PHP/MVC)
-- **Qué hizo mejor Bolt:** Generó una interfaz moderna con React y Tailwind en cuestión de segundos, integrando estados interactivos y reactividad inmediata en el frontend sin necesidad de recargar la página.
-- **Qué hizo peor Bolt:** El código generado carece de un backend persistente real (utiliza solo estado en memoria/React state), lo que dificulta la escalabilidad, el control fino sobre la lógica de negocio y la personalización profunda de la arquitectura en comparación con una estructura POO/MVC propia en PHP con MySQL.
+- **Qué hizo mejor Bolt:** Generó una interfaz SPA completa, reactiva y moderna usando Tailwind CSS y componentes modulares en menos de 2 minutos. Además, estructuró estados en vivo para interactuar con los formularios sin recargar la página.
+- **Qué hizo peor Bolt:** Aunque incluye persistencia con Bolt Cloud, la arquitectura queda acoplada a su entorno propio y abstracciones automáticas, mientras que el código PHP/MVC hecho a mano me permite un control total sobre las consultas SQL, validaciones del servidor, seguridad PDO y facilidades para desplegar en cualquier hosting tradicional como InfinityFree.
