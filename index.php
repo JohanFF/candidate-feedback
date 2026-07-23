@@ -1,6 +1,20 @@
 <?php
-// Enrutador principal MVC
-require_once 'config/database.php';
 require_once 'controllers/CandidateController.php';
 
-echo "CandidateFeedback - Sistema de Análisis de Postulación";
+$controller = new CandidateController();
+$action = isset($_GET['action']) ? $_GET['action'] : 'form';
+
+switch ($action) {
+    case 'create':
+        $controller->store();
+        break;
+    case 'list':
+        $controller->list();
+        break;
+    case 'report':
+        $controller->report();
+        break;
+    default:
+        $controller->showForm();
+        break;
+}
