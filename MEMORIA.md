@@ -2,7 +2,7 @@
 
 ## Herramientas de IA Utilizadas
 - Gemini (Asistente principal de arquitectura y código)
-
+- Bolt.new (Prototipado rápido de la vista en React)
 ## Prompts Clave y Decisiones
 - Estructuración inicial bajo arquitectura MVC en PHP POO sin frameworks pesados para maximizar velocidad y rendimiento en despliegue.
 ## Tarea Sorpresa: Reconstrucción en Bolt.new y Comparación

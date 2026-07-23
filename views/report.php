@@ -33,14 +33,14 @@
         </div>
 
         <div style="margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1.05rem; color: #1e293b; margin-bottom: 0.5rem;">💪 Fortalezas Destacadas</h3>
+            <h3 style="font-size: 1.05rem; color: #1e293b; margin-bottom: 0.5rem;"> Fortalezas Destacadas</h3>
             <p style="background: #f8fafc; padding: 1rem; border-radius: 6px; color: #334155; line-height: 1.5; border: 1px solid #f1f5f9;">
                 <?= nl2br(htmlspecialchars($candidateData['strengths'])) ?>
             </p>
         </div>
 
         <div style="margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1.05rem; color: #1e293b; margin-bottom: 0.5rem;">📈 Oportunidades de Crecimiento / Recomendaciones</h3>
+            <h3 style="font-size: 1.05rem; color: #1e293b; margin-bottom: 0.5rem;"> Oportunidades de Crecimiento / Recomendaciones</h3>
             <p style="background: #f8fafc; padding: 1rem; border-radius: 6px; color: #334155; line-height: 1.5; border: 1px solid #f1f5f9;">
                 <?= nl2br(htmlspecialchars($candidateData['areas_to_improve'])) ?>
             </p>
