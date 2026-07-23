@@ -16,6 +16,9 @@ switch ($action) {
     case 'report':
         $controller->report();
         break;
+    case 'delete':
+        $controller->delete();
+        break;
     case 'list':
     default:
         $controller->list();

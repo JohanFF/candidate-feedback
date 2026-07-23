@@ -45,4 +45,13 @@ class CandidateController {
 
         require_once 'views/report.php';
     }
+    // Eliminar informe
+    public function delete() {
+        $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+        if ($id > 0) {
+        $this->candidate->delete($id);
+        }
+    header("Location: index.php?action=list");
+        exit();
+    }
 }

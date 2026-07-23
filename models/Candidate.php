@@ -46,4 +46,11 @@ class Candidate {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    // Eliminar evaluación por ID
+    public function delete($id) {
+         $query = "DELETE FROM " . $this->table . " WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(':id', (int)$id);
+        return $stmt->execute();
+    }
 }

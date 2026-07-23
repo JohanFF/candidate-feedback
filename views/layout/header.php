@@ -8,9 +8,20 @@
 </head>
 <body>
     <header class="header">
-        <h1 style="font-size: 1.2rem; font-weight: 700;">CandidateFeedback</h1>
-        <nav>
-            <a href="index.php?action=form">Registrar Evaluacion</a>
-            <a href="index.php?action=list">Candidatos</a>
+        <div class="header-logo">
+            <a href="index.php?action=list">CandidateFeedback</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+            ☰
+        </button>
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.php?action=list">Panel / Candidatos</a>
+            <a href="index.php?action=form" class="btn-nav">+ Registrar Evaluación</a>
         </nav>
     </header>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+    </script>
