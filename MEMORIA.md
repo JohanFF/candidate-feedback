@@ -20,4 +20,6 @@
 
 ### Comparación: Bolt.new vs. Código a Mano (PHP/MVC)
 - **Qué hizo mejor Bolt:** Generó una interfaz SPA completa, reactiva y moderna usando Tailwind CSS y componentes modulares en menos de 2 minutos. Además, estructuró estados en vivo para interactuar con los formularios sin recargar la página.
+- piesnso que volt lo hiizo muy bien para el poco tiempo que le tomo
+- una buena interfaz similar a computrabajo y linked
 - **Qué hizo peor Bolt:** Aunque incluye persistencia con Bolt Cloud, la arquitectura queda acoplada a su entorno propio y abstracciones automáticas, mientras que el código PHP/MVC hecho a mano me permite un control total sobre las consultas SQL, validaciones del servidor, seguridad PDO y facilidades para desplegar en cualquier hosting tradicional como InfinityFree.
