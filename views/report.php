@@ -2,48 +2,47 @@
 
 <main class="container">
     <div style="margin-bottom: 1rem;">
-        <a href="index.php?action=list" style="color: #64748b; text-decoration: none; font-weight: 500;">← Volver al listado</a>
+        <a href="index.php?action=list" style="color: #64748b; text-decoration: none; font-size: 0.9rem; font-weight: 500;">
+            ← Volver al listado
+        </a>
     </div>
 
-    <!-- Borde superior en rojo carmesí -->
-    <div class="card" style="border-top: 5px solid #e11d48;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem; margin-bottom: 1.5rem;">
+    <div class="card" style="border-top: 4px solid #be123c; padding: 2rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem;">
             <div>
-                <h2>Informe de Retroalimentación de Postulación</h2>
-                <p class="subtitle" style="margin-bottom: 0;">Candidato: <strong><?= htmlspecialchars($candidateData['candidate_name']) ?></strong></p>
-                <p style="font-size: 0.85rem; color: #64748b; margin-top: 0.2rem;">Puesto: <?= htmlspecialchars($candidateData['position_applied']) ?></p>
+                <h2 style="font-size: 1.5rem; color: #0f172a;">Informe de Retroalimentación de Postulación</h2>
+                <p style="color: #64748b; font-size: 0.95rem; margin-top: 0.3rem;">
+                    <strong>Candidato:</strong> <?= htmlspecialchars($candidateData['candidate_name']) ?> <br>
+                    <strong>Puesto:</strong> <?= htmlspecialchars($candidateData['position_applied']) ?>
+                </p>
             </div>
-            <span style="padding: 0.4rem 0.8rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600; 
-                background-color: <?= $candidateData['status'] == 'Aprobado' ? '#dcfce7' : ($candidateData['status'] == 'Rechazado' ? '#fee2e2' : '#fef3c7') ?>; 
-                color: <?= $candidateData['status'] == 'Aprobado' ? '#166534' : ($candidateData['status'] == 'Rechazado' ? '#991b1b' : '#92400e') ?>;">
+            <span class="status-pill status-<?= strtolower(str_replace(' ', '-', $candidateData['status'])) ?>" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">
                 Estado: <?= htmlspecialchars($candidateData['status']) ?>
             </span>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
-            <!-- Destacado del puntaje en rojo carmesí -->
-            <div style="background: #fff1f2; padding: 1rem; border-radius: 8px; text-align: center; border: 1px solid #ffe4e6;">
-                <span style="font-size: 0.85rem; color: #9f1239; font-weight: 600;">EVALUACIÓN TÉCNICA</span>
-                <p style="font-size: 1.8rem; font-weight: 700; color: #be123c; margin-top: 0.2rem;"><?= $candidateData['technical_score'] ?> / 10</p>
+        <!-- Bloques de Puntajes -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="background-color: #fff1f2; border: 1px solid #ffe4e6; border-radius: 8px; padding: 1.2rem; text-align: center;">
+                <span style="font-size: 0.75rem; font-weight: 700; color: #be123c; text-transform: uppercase;">EVALUACIÓN TÉCNICA</span>
+                <p style="font-size: 1.8rem; font-weight: 700; color: #be123c; margin-top: 0.3rem;"><?= $candidateData['technical_score'] ?> / 10</p>
             </div>
-            <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; text-align: center; border: 1px solid #e2e8f0;">
-                <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">HABILIDADES BLANDAS</span>
-                <p style="font-size: 1.8rem; font-weight: 700; color: #059669; margin-top: 0.2rem;"><?= $candidateData['soft_skills_score'] ?> / 10</p>
+            <div style="background-color: #f0fdf4; border: 1px solid #dcfce7; border-radius: 8px; padding: 1.2rem; text-align: center;">
+                <span style="font-size: 0.75rem; font-weight: 700; color: #15803d; text-transform: uppercase;">HABILIDADES BLANDAS</span>
+                <p style="font-size: 1.8rem; font-weight: 700; color: #15803d; margin-top: 0.3rem;"><?= $candidateData['soft_skills_score'] ?> / 10</p>
             </div>
         </div>
 
-        <div style="margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1.05rem; color: #1e293b; margin-bottom: 0.5rem;"> Fortalezas Destacadas</h3>
-            <p style="background: #f8fafc; padding: 1rem; border-radius: 6px; color: #334155; line-height: 1.5; border: 1px solid #f1f5f9;">
-                <?= nl2br(htmlspecialchars($candidateData['strengths'])) ?>
-            </p>
+        <!-- Fortalezas Destacadas -->
+        <h3 class="feedback-title">Fortalezas Destacadas</h3>
+        <div class="feedback-box feedback-box-strengths">
+            <?= nl2br(htmlspecialchars($candidateData['strengths'])) ?>
         </div>
 
-        <div style="margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1.05rem; color: #1e293b; margin-bottom: 0.5rem;"> Oportunidades de Crecimiento / Recomendaciones</h3>
-            <p style="background: #f8fafc; padding: 1rem; border-radius: 6px; color: #334155; line-height: 1.5; border: 1px solid #f1f5f9;">
-                <?= nl2br(htmlspecialchars($candidateData['areas_to_improve'])) ?>
-            </p>
+        <!-- Oportunidades de Crecimiento -->
+        <h3 class="feedback-title">Oportunidades de Crecimiento / Recomendaciones</h3>
+        <div class="feedback-box feedback-box-improvements">
+            <?= nl2br(htmlspecialchars($candidateData['areas_to_improve'])) ?>
         </div>
     </div>
 </main>

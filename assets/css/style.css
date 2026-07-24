@@ -50,15 +50,57 @@ body {
     font-size: 0.95rem;
 }
 
+/* Hover general de los enlaces */
 .nav-menu a:hover {
     color: #fff;
 }
 
+/* Botón del Header & Hover Interactivo */
+.nav-menu a.btn-nav,
+.btn-nav {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-menu a.btn-nav:hover,
+.btn-nav:hover {
+    background-color: #ffffff !important;
+    color: #881337 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo y Hover específico para el botón de acción */
+.nav-menu a.btn-nav {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    color: #ffffff !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-menu a.btn-nav:hover {
+    background-color: #ffffff !important;
+    color: #881337 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover Interactivo para el Botón del Header */
 .btn-nav {
     background: rgba(255, 255, 255, 0.15);
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     color: #fff !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-nav:hover {
+    background: #ffffff;
+    color: #881337 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* Layout */
@@ -210,36 +252,6 @@ body {
     display: inline-block;
 }
 
-/* Reglas Móviles (Media Queries) */
-@media (max-width: 680px) {
-    .nav-toggle { display: block; }
-    
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #881337;
-        padding: 1rem;
-        gap: 1rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        z-index: 100;
-    }
-
-    .nav-menu.active { display: flex; }
-    
-    .dashboard-head {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .btn-mobile-block {
-        text-align: center;
-        width: 100%;
-    }
-}
 /* Estilos para Formularios */
 .form-card {
     max-width: 750px;
@@ -338,8 +350,66 @@ body {
     background-color: #e2e8f0;
 }
 
-/* Adaptación Móvil */
+/* Rediseño Elegante para Fortalezas y Oportunidades en Reporte */
+.feedback-box {
+    background-color: #f8fafc;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 0.5rem;
+    color: #334155;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Resalte Verde para Fortalezas */
+.feedback-box-strengths {
+    border-left: 4px solid #166534;
+    background-color: #f0fdf4;
+}
+
+/* Resalte Ámbar para Oportunidades */
+.feedback-box-improvements {
+    border-left: 4px solid #d97706;
+    background-color: #fffbeb;
+}
+
+.feedback-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 1.5rem;
+}
+
+/* Reglas Móviles (Media Queries) */
 @media (max-width: 680px) {
+    .nav-toggle { display: block; }
+    
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #881337;
+        padding: 1rem;
+        gap: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        z-index: 100;
+    }
+
+    .nav-menu.active { display: flex; }
+    
+    .dashboard-head {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-mobile-block {
+        text-align: center;
+        width: 100%;
+    }
+
     .form-card {
         padding: 1.5rem;
     }
